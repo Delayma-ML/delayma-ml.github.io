@@ -1,10 +1,5 @@
 theme: minima
-plugins:
-  - jekyll-readme-index
 
 markdown: kramdown
 kramdown:
   input: GFM
-
-exclude:
-  - README.md
