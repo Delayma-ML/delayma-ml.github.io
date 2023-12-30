@@ -56,11 +56,11 @@ The dataset source is taken from a [kaggle dataset](https://www.kaggle.com/datas
 
 ![delay_vs_dist](images/delay_vs_dist.png)
 
-- Upon examining the most frequently visited destination states, we find California, Florida, and New York at the top. This aligns with the fact that these states are among the most populated in the U.S. Interestingly, despite being located across the country, the two most popular destinations are based in California.
+- Upon examining the most frequently visited destination states, we find California, Florida, and New York at the top. This aligns with the fact that these states are among the most populated in the U.S. Interestingly, despite being located across the country, the two most popular cities are based in California.
 
 ![dest_states](images/dest_airports.png)
 
-- Severe weather circumstances, such as exceptionally high or low temperatures, can lead to flight delays. This is understandable, as such extreme weather can pose challenges for both the aircraft and the airport operations.
+- Severe weather circumstances, such as exceptionally high or low temperatures, can lead to flight delays. This is understandable, as such extreme weather can pose challenges for the aircraft and the airport operations.
 
 ![temp_vs_delay](images/temp_vs_delay.png)
 
@@ -91,7 +91,7 @@ Basic preprocessing, which was done on the complete dataset:
 
 2. Attributes such as day, month, hour, and minute exhibit cyclical behaviour. We employ a technique known as **cyclic feature engineering** to capture this periodicity. This method involves mapping each cyclical attribute onto a circle, ensuring the preservation of its periodic characteristics. As a result, we applied cyclic feature engineering to the `MONTH`, `DAY_OF_WEEK`, and `DAY_OF_MONTH` columns.
 
-To streamline the problem-solving process, we initially chose to tackle a less complex subset of the problem. This approach allowed us to scale up our efforts gradually. Consequently, we partitioned the original dataset into four distinct, manageable sub-datasets.
+We initially tackled a less complex subset of the problem to streamline the problem-solving process. This approach allowed us to scale up our efforts gradually. Consequently, we partitioned the original dataset into four distinct, manageable sub-datasets.
 
 Datasets used for Classification had their `DEP_DELAY` column converted to binary classes based on delay, where delay is true if the departure time delay exceeds 15 minutes.
 
@@ -177,7 +177,7 @@ We initially used the following algorithms and did hyperparameter tuning on them
 | PolynomialFeatures    |                                              | 1.348 x 10<sup>-19</sup> | 41.943  | 1.0                |
 | Ridge                 | alpha=0.1                                    | 1.701 x 10<sup>-14</sup> | 41.943 | 1.0                |
 | Lasso                 | alpha=0.1                                    | 1.015 x 10<sup>-5</sup> | 41.940 | 1.0 |
-| BayesianRidge         |                                              | 1.472 10<sup>-24</sup> | 41.943   | 1.0                |
+| BayesianRidge         |                                              | 1.472 x 10<sup>-24</sup> | 41.943   | 1.0                |
 | ElasticNet            | alpha=0.1                                    | 9.800 x 10<sup>-6</sup>  | 41.940  | 1.0 |
 
 Our model yields a low Mean Squared Error (MSE) and a high R2 score, which are positive indicators. However, the high standard deviation suggests the presence of outliers in our dataset. To address this, we employed the z-score method with a threshold of 3.0 to identify and remove these outliers. The results post-outlier removal are as follows:
