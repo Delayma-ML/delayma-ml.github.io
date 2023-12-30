@@ -1,4 +1,4 @@
-![image](https://github.com/Delayma-ML/delayma-ml.github.io/assets/114860927/f795a2f0-5757-418f-a9ae-202a1b40c01b)# Delayma: A Comprehensive Approach to Accurate Flight Delay Forecasting
+# Delayma: A Comprehensive Approach to Accurate Flight Delay Forecasting
 
 ### Authors:
 
